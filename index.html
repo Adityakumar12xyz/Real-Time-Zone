@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live Time Now | World Clock, Stopwatch, Timer & Pomodoro – Aditya Gupta Developer | Time Lab</title>
+<meta name="description" content="Check live time now, current time in any country, world clock, digital clock, analog clock, stopwatch with laps, countdown timer, and pomodoro focus timer — all free by Aditya Gupta Developer.">
+<meta name="keywords" content="live time now, current time, what time is it, world clock, current time in USA, UK, Japan, India,Dubai, Australia, online stopwatch, countdown timer, pomodoro timer, Aditya Gupta, Aditya Gupta Developer, Aditya Gupta project, Time Lab">
+<meta name="author" content="Aditya Gupta Developer">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://adityagupta-timelab.netlify.app/">
+<meta property="og:title" content="Live Time | World Clock, Stopwatch, Timer – Aditya Gupta Developer">
+<meta property="og:description" content="Free premium clock dashboard by Aditya Gupta Developer. Live time, world clock, stopwatch, countdown timer, pomodoro.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://adityagupta-timelab.netlify.app/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Aditya Gupta Developer | Time Lab – Live Clock Dashboard">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Person","name":"Aditya Gupta","alternateName":["Aditya Gupta Developer","Aditya Gupta Web Developer"],"url":"https://adityagupta-timelab.netlify.app/","sameAs":["https://www.linkedin.com/in/aditya-gupta-878b3b289","https://instagram.com/mr_insaan_kumar"],"jobTitle":"Web Developer"},{"@type":"WebApplication","name":"Time Lab by Aditya Gupta Developer","description":"Free online clock dashboard with live time, world clock, stopwatch, countdown timer, pomodoro by Aditya Gupta Developer","url":"https://adityagupta-timelab.netlify.app/","applicationCategory":"UtilitiesApplication","isAccessibleForFree":true,"featureList":["Live Digital Clock","Analog Clock","Stopwatch with Laps","Countdown Timer","World Clock","Pomodoro Timer"]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the current time now?","acceptedAnswer":{"@type":"Answer","text":"Check live time on Time Lab by Aditya Gupta Developer at adityagupta-timelab.netlify.app"}},{"@type":"Question","name":"Who is Aditya Gupta Developer?","acceptedAnswer":{"@type":"Answer","text":"Aditya Gupta is a creative web developer from India who built Time Lab – a premium futuristic clock dashboard."}}]}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080810;--card:rgba(15,15,30,.6);--border:rgba(255,255,255,.08);--txt:#fff;--txt2:rgba(255,255,255,.6);--cyan:#00ffcc;--pink:#ff2a74;--purple:#9d4edd;--green:#39ff14;--gold:#ffb703;--ac:var(--cyan);--glow:rgba(0,255,204,.35);--glow2:rgba(0,255,204,.1);--shadow:0 8px 32px rgba(0,0,0,.5);--fd:'Orbitron',monospace;--fu:'Plus Jakarta Sans',sans-serif;--tr:all .3s cubic-bezier(.4,0,.2,1)}
+body.theme-pink{--ac:var(--pink);--glow:rgba(255,42,116,.35);--glow2:rgba(255,42,116,.1)}
+body.theme-purple{--ac:var(--purple);--glow:rgba(157,78,221,.35);--glow2:rgba(157,78,221,.1)}
+body.theme-green{--ac:var(--green);--glow:rgba(57,255,20,.35);--glow2:rgba(57,255,20,.1)}
+body.theme-gold{--ac:var(--gold);--glow:rgba(255,183,3,.35);--glow2:rgba(255,183,3,.1)}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{background:var(--bg);color:var(--txt);font-family:var(--fu);min-height:100vh;display:flex;flex-direction:column;align-items:center;overflow-x:hidden;padding:16px}
+/* BG GLOW */
+.bg{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.blob{position:absolute;border-radius:50%;filter:blur(120px);opacity:.22;animation:drift 20s infinite alternate ease-in-out}
+.b1{width:40vw;height:40vw;background:var(--ac);top:-10%;left:-10%;animation-duration:20s}
+.b2{width:35vw;height:35vw;background:#4361ee;bottom:-10%;right:-10%;animation-duration:30s;animation-delay:-5s}
+.b3{width:28vw;height:28vw;background:var(--purple);top:50%;left:60%;animation-duration:25s;animation-delay:-10s}
+@keyframes drift{0%{transform:translate(0,0) scale(1)}50%{transform:translate(5%,8%) scale(1.1)}100%{transform:translate(-4%,-4%) scale(.9)}}
+/* DASHBOARD */
+.wrap{width:100%;max-width:1000px;background:var(--card);backdrop-filter:blur(25px);border:1px solid var(--border);border-radius:24px;box-shadow:var(--shadow),inset 0 1px 1px rgba(255,255,255,.1);margin-top:12px;overflow:hidden;animation:fadeIn .8s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+/* HEADER */
+header{padding:20px 28px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;background:rgba(10,10,20,.4)}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-icon{width:40px;height:40px;border-radius:12px;background:var(--glow2);border:1px solid var(--ac);display:flex;align-items:center;justify-content:center;color:var(--ac);box-shadow:0 0 10px var(--glow);transition:var(--tr)}
+.brand-icon svg{width:20px;height:20px;fill:currentColor;transition:var(--tr)}
+.wrap:hover .brand-icon svg{transform:rotate(360deg)}
+.brand h1{font-size:1.35rem;font-weight:700;letter-spacing:2px;background:linear-gradient(135deg,#fff 30%,var(--ac));-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-transform:uppercase}
+.brand p{font-size:.72rem;color:var(--txt2);letter-spacing:1px}
+.hcontrols{display:flex;align-items:center;gap:14px}
+.themes{display:flex;gap:8px;background:rgba(0,0,0,.3);padding:6px 10px;border-radius:20px;border:1px solid var(--border)}
+.dot{width:15px;height:15px;border-radius:50%;cursor:pointer;border:2px solid transparent;transition:var(--tr)}
+.dot:hover{transform:scale(1.25)}
+.dot.active{border-color:#fff;box-shadow:0 0 8px currentColor}
+.dot.cyan{background:var(--cyan);color:var(--cyan)}
+.dot.pink{background:var(--pink);color:var(--pink)}
+.dot.purple{background:var(--purple);color:var(--purple)}
+.dot.green{background:var(--green);color:var(--green)}
+.dot.gold{background:var(--gold);color:var(--gold)}
+.fmtbtn{background:rgba(255,255,255,.05);border:1px solid var(--border);color:var(--txt);padding:6px 13px;border-radius:20px;cursor:pointer;font-size:.78rem;font-weight:600;letter-spacing:.5px;transition:var(--tr)}
+.fmtbtn:hover{background:var(--ac);color:var(--bg);border-color:var(--ac);box-shadow:0 0 12px var(--glow)}
+/* TABS */
+nav{display:flex;overflow-x:auto;background:rgba(5,5,10,.3);border-bottom:1px solid var(--border);padding:0 12px;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+.tab{background:transparent;border:none;outline:none;color:var(--txt2);padding:14px 18px;font-family:var(--fu);font-size:.87rem;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:7px;white-space:nowrap;border-bottom:2px solid transparent;transition:var(--tr)}
+.tab svg{width:17px;height:17px;fill:currentColor}
+.tab:hover{color:var(--txt);background:rgba(255,255,255,.02)}
+.tab.active{color:var(--ac);border-bottom-color:var(--ac)}
+/* CONTENT */
+.content{padding:36px 28px;min-height:370px;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.pane{display:none;width:100%;animation:up .35s ease forwards}
+.pane.active{display:flex;flex-direction:column;align-items:center}
+@keyframes up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+/* ===== DIGITAL CLOCK ===== */
+.dig-wrap{text-align:center;width:100%;max-width:620px}
+.dig-time{font-family:var(--fd);font-size:5.5rem;font-weight:700;color:var(--ac);text-shadow:0 0 20px var(--glow),0 0 40px var(--glow2);letter-spacing:4px;line-height:1;margin-bottom:14px;display:flex;justify-content:center;align-items:baseline}
+.dig-time .sec{font-size:3.3rem;opacity:.85;margin-left:8px}
+.dig-time .per{font-size:1.9rem;font-weight:500;margin-left:12px;color:var(--txt);letter-spacing:1px}
+.date-tz{display:flex;flex-direction:column;gap:8px;align-items:center}
+.date-txt{font-size:1.2rem;font-weight:500;letter-spacing:1px}
+.tz-badge{background:var(--glow2);border:1px solid var(--ac);color:var(--ac);padding:4px 14px;border-radius:12px;font-size:.78rem;font-weight:600;letter-spacing:.5px;margin-top:4px;box-shadow:0 0 10px rgba(0,0,0,.3)}
+
+/* ===== ANALOG CLOCK ===== */
+.analog-wrap{position:relative;width:270px;height:270px}
+.clock-face{width:100%;height:100%;background:rgba(10,10,20,.5);border:3px solid var(--border);border-radius:50%;position:relative;box-shadow:var(--shadow),inset 0 0 30px rgba(0,0,0,.8);display:flex;justify-content:center;align-items:center}
+.clock-face::before{content:'';position:absolute;width:100%;height:100%;border-radius:50%;border:2px solid transparent;border-top-color:var(--ac);border-bottom-color:var(--ac);animation:spin 20s linear infinite;opacity:.5}
+@keyframes spin{100%{transform:rotate(360deg)}}
+.hand{position:absolute;bottom:50%;left:50%;transform-origin:bottom center;border-radius:4px;z-index:2}
+.hour-h{width:6px;height:58px;background:var(--txt);transform:translateX(-50%)}
+.min-h{width:4px;height:82px;background:var(--txt2);transform:translateX(-50%)}
+.sec-h{width:2px;height:98px;background:var(--ac);transform:translateX(-50%);z-index:3;box-shadow:0 0 10px var(--ac)}
+.cap{position:absolute;width:12px;height:12px;background:var(--ac);border:2px solid var(--txt);border-radius:50%;z-index:10;box-shadow:0 0 8px var(--ac)}
+.dn{position:absolute;font-weight:700;font-size:1.05rem;color:var(--txt2);font-family:var(--fd)}
+.dn12{top:14px}.dn3{right:16px}.dn6{bottom:14px}.dn9{left:16px}
+.sub-dig{margin-top:22px;font-family:var(--fd);font-size:1.45rem;color:var(--txt2);letter-spacing:1px}
+
+/* ===== STOPWATCH ===== */
+.sw-wrap{width:100%;display:flex;flex-direction:column;align-items:center;gap:22px}
+.sw-disp{font-family:var(--fd);font-size:4.6rem;font-weight:700;color:var(--ac);text-shadow:0 0 15px var(--glow);letter-spacing:2px;line-height:1}
+.sw-btns,.tm-btns{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.btn{padding:11px 26px;border-radius:30px;font-family:var(--fu);font-size:.93rem;font-weight:600;letter-spacing:.5px;cursor:pointer;transition:var(--tr);border:1px solid var(--border);display:flex;align-items:center;gap:8px}
+.btn svg{width:16px;height:16px;fill:currentColor}
+.btn-p{background:var(--ac);color:var(--bg);border-color:var(--ac);box-shadow:0 4px 15px var(--glow2)}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 6px 20px var(--glow)}
+.btn-s{background:rgba(255,255,255,.05);color:var(--txt)}
+.btn-s:hover{background:rgba(255,255,255,.14);transform:translateY(-2px)}
+.btn-d{background:rgba(239,71,111,.12);color:#ef476f;border-color:rgba(239,71,111,.3)}
+.btn-d:hover{background:#ef476f;color:#fff;transform:translateY(-2px);box-shadow:0 6px 20px rgba(239,71,111,.4)}
+.btn:disabled{opacity:.35;cursor:not-allowed;transform:none!important;box-shadow:none!important}
+.laps{width:100%;max-width:460px;max-height:180px;overflow-y:auto;border-radius:12px;background:rgba(0,0,0,.2);border:1px solid var(--border)}
+.laps::-webkit-scrollbar{width:5px}
+.laps::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:4px}
+.lap-row{display:flex;justify-content:space-between;padding:10px 16px;border-bottom:1px solid rgba(255,255,255,.04);font-size:.88rem}
+.lap-row:last-child{border-bottom:none}
+.lap-n{color:var(--ac);font-weight:600}
+.lap-v{font-family:var(--fd);font-size:.85rem}
+
+/* ===== TIMER ===== */
+.tm-wrap{width:100%;display:flex;flex-direction:column;align-items:center;gap:26px}
+.tm-inputs{display:flex;align-items:flex-end;gap:10px}
+.tm-grp{display:flex;flex-direction:column;align-items:center;gap:6px}
+.tm-grp span{font-size:.68rem;text-transform:uppercase;color:var(--txt2);font-weight:600;letter-spacing:.5px}
+.tm-sep{font-size:1.6rem;font-weight:700;padding-bottom:8px;color:var(--txt2)}
+.tm-field{width:62px;height:52px;background:rgba(0,0,0,.3);border:1px solid var(--border);border-radius:12px;color:var(--txt);font-family:var(--fd);font-size:1.4rem;text-align:center;outline:none;transition:var(--tr)}
+.tm-field:focus{border-color:var(--ac);box-shadow:0 0 10px var(--glow2)}
+.tm-field::-webkit-inner-spin-button,.tm-field::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
+.circ{position:relative;width:220px;height:220px}
+.circ svg{transform:rotate(-90deg);width:220px;height:220px}
+.c-bg{fill:none;stroke:rgba(255,255,255,.05);stroke-width:8}
+.c-bar{fill:none;stroke:var(--ac);stroke-width:8;stroke-linecap:round;stroke-dasharray:628;stroke-dashoffset:0;transition:stroke-dashoffset .1s linear;filter:drop-shadow(0 0 6px var(--glow))}
+.c-label{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center}
+.c-txt{font-family:var(--fd);font-size:2.15rem;font-weight:700;color:var(--txt)}
+
+/* ===== WORLD CLOCK ===== */
+.wc-wrap{width:100%;display:flex;flex-direction:column;gap:18px}
+.wc-head{display:flex;justify-content:space-between;align-items:center}
+.wc-head h3{font-size:1.05rem;letter-spacing:1px}
+.add-btn{background:rgba(255,255,255,.05);border:1px solid var(--border);color:var(--txt);padding:7px 15px;border-radius:20px;cursor:pointer;font-size:.83rem;font-weight:600;transition:var(--tr)}
+.add-btn:hover{background:var(--ac);color:var(--bg);border-color:var(--ac)}
+.city-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;width:100%;max-height:280px;overflow-y:auto;padding-right:4px}
+.city-grid::-webkit-scrollbar{width:5px}
+.city-grid::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:4px}
+.city-card{background:rgba(0,0,0,.2);border:1px solid var(--border);border-radius:16px;padding:15px 18px;display:flex;flex-direction:column;gap:5px;transition:var(--tr)}
+.city-card:hover{border-color:var(--ac);transform:translateY(-2px);box-shadow:0 4px 14px rgba(0,0,0,.3)}
+.c-name{font-size:.95rem;font-weight:700}
+.c-time{font-family:var(--fd);font-size:1.75rem;color:var(--ac);text-shadow:0 0 8px var(--glow2)}
+.c-date{font-size:.78rem;color:var(--txt2)}
+.c-off{font-size:.72rem;background:rgba(255,255,255,.05);padding:2px 6px;border-radius:6px;align-self:flex-start}
+/* Modal */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(10px);display:none;align-items:center;justify-content:center;z-index:1000;opacity:0;transition:opacity .3s}
+.modal.open{display:flex;opacity:1}
+.modal-box{background:#111122;border:1px solid var(--border);border-radius:20px;width:90%;max-width:380px;padding:24px;box-shadow:var(--shadow);transform:translateY(20px);transition:transform .3s}
+.modal.open .modal-box{transform:translateY(0)}
+.modal-hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.modal-hd h3{font-size:1rem;font-weight:700}
+.x-btn{background:transparent;border:none;color:var(--txt2);font-size:1.5rem;cursor:pointer;line-height:1}
+.x-btn:hover{color:var(--txt)}
+.tz-sel{width:100%;background:rgba(0,0,0,.4);border:1px solid var(--border);border-radius:10px;color:var(--txt);padding:10px;outline:none;font-family:var(--fu);margin-bottom:18px;font-size:.9rem}
+.tz-sel option{background:#111122}
+
+/* ===== POMODORO ===== */
+.po-wrap{width:100%;display:flex;flex-direction:column;align-items:center;gap:18px}
+.po-modes{display:flex;gap:8px;background:rgba(0,0,0,.3);padding:4px;border-radius:30px;border:1px solid var(--border)}
+.po-btn{background:transparent;border:none;color:var(--txt2);padding:8px 16px;border-radius:20px;font-weight:600;font-size:.8rem;cursor:pointer;transition:var(--tr)}
+.po-btn.active{background:var(--ac);color:var(--bg);box-shadow:0 0 10px var(--glow)}
+.po-status{font-size:1.05rem;font-weight:600;letter-spacing:.5px;color:var(--ac)}
+
+/* ===== FOOTER ===== */
+footer{width:100%;max-width:1000px;margin-top:24px;margin-bottom:12px;padding:22px 24px;background:rgba(15,15,30,.4);backdrop-filter:blur(25px);border:1px solid var(--border);border-radius:20px;display:flex;flex-direction:column;align-items:center;gap:14px;animation:fadeIn 1s ease}
+.footer-info{text-align:center}
+.footer-info h4{font-size:1rem;font-weight:700;letter-spacing:1px}
+.footer-info p{font-size:.78rem;color:var(--txt2);margin-top:4px}
+.footer-info .hl{color:var(--ac);font-weight:700}
+.footer-info .sub{font-size:.68rem;opacity:.45;margin-top:5px}
+.footer-info a.about-lnk{color:var(--ac);font-size:.8rem;text-decoration:none;opacity:.7;margin-top:6px;display:inline-block}
+.socials{display:flex;gap:14px}
+.soc{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.03);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--txt2);transition:var(--tr);text-decoration:none;position:relative}
+.soc svg{width:20px;height:20px;fill:currentColor}
+.soc:hover{color:var(--bg);transform:translateY(-4px)}
+.soc.li:hover{background:#0077b5;border-color:#0077b5;box-shadow:0 0 15px rgba(0,119,181,.5)}
+.soc.ig:hover{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);border-color:transparent;box-shadow:0 0 15px rgba(220,39,67,.5)}
+.soc.wa:hover{background:#25d366;border-color:#25d366;box-shadow:0 0 15px rgba(37,211,102,.5)}
+.tip{position:absolute;bottom:125%;background:rgba(10,10,20,.95);border:1px solid var(--border);color:var(--txt);padding:4px 8px;border-radius:6px;font-size:.73rem;white-space:nowrap;opacity:0;pointer-events:none;transform:translateY(5px);transition:var(--tr)}
+.soc:hover .tip{opacity:1;transform:translateY(0)}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  body{padding:10px}
+  header{padding:14px 18px;flex-direction:column;align-items:flex-start}
+  .hcontrols{width:100%;justify-content:space-between}
+  .content{padding:22px 14px}
+  .dig-time{font-size:3.8rem}
+  .dig-time .sec{font-size:2.4rem}
+  .dig-time .per{font-size:1.5rem}
+  .sw-disp{font-size:3.2rem}
+  .analog-wrap{width:220px;height:220px}
+  .hour-h{height:44px}.min-h{height:63px}.sec-h{height:76px}
+  .sw-btns,.tm-btns{gap:10px}
+  .btn{padding:10px 18px;font-size:.85rem}
+}
+@media(max-width:480px){
+  .tab{padding:12px 12px;font-size:.78rem}
+  .dig-time{font-size:3rem}
+}
+</style>
+</head>
+<body>
+
+<!-- SEO hidden text -->
+<div style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);" aria-hidden="true">
+  <h1>Aditya Gupta Developer – Time Lab: Live Time, World Clock, Stopwatch, Timer, Pomodoro</h1>
+  <p>Free online clock dashboard built by Aditya Gupta, web developer India. Live digital clock, analog clock, stopwatch with laps, countdown timer, world clock for USA UK Japan India Dubai Australia, Pomodoro focus timer.</p>
+</div>
+
+<!-- BG -->
+<div class="bg" aria-hidden="true">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+</div>
+
+<!-- DASHBOARD -->
+<div class="wrap">
+
+  <!-- HEADER -->
+  <header>
+    <div class="brand">
+      <div class="brand-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+      </div>
+      <div>
+        <h1>Aditya Gupta</h1>
+        <p>Premium Time Lab Dashboard</p>
+      </div>
+    </div>
+    <div class="hcontrols">
+      <div class="themes" id="themes">
+        <div class="dot cyan active" title="Cyan"></div>
+        <div class="dot pink" title="Pink"></div>
+        <div class="dot purple" title="Purple"></div>
+        <div class="dot green" title="Green"></div>
+        <div class="dot gold" title="Gold"></div>
+      </div>
+      <button class="fmtbtn" id="fmtbtn">12H</button>
+    </div>
+  </header>
+
+  <!-- TABS NAV -->
+  <nav>
+    <button class="tab active" data-tab="dig">
+      <svg viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12s4.48 10 10 10 10-4.48 10-10zm-10 8c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.2 3.15.8-1.3-4.5-2.7V7z"/></svg>
+      Digital
+    </button>
+    <button class="tab" data-tab="ana">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/></svg>
+      Analog
+    </button>
+    <button class="tab" data-tab="sw">
+      <svg viewBox="0 0 24 24"><path d="M19.03 7.39l1.42-1.42c-.45-.51-.93-1-1.44-1.44l-1.42 1.42C16.14 4.74 14.19 4 12 4c-5.52 0-10 4.48-10 10s4.48 10 10 10 10-4.48 10-10c0-2.37-.83-4.54-2.21-6.25zM12 22c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm1-13h-2v6h6v-2h-4V9z"/></svg>
+      Stopwatch
+    </button>
+    <button class="tab" data-tab="tm">
+      <svg viewBox="0 0 24 24"><path d="M6 2h12v2H6V2zm11.2 5.5l1.4-1.4C17.3 4.9 15.7 4 14 4H10C8.3 4 6.7 4.9 5.4 6.1L6.8 7.5C8.2 6.3 10 5.6 12 5.6s3.8.7 5.2 1.9zM12 7C8.14 7 5 10.14 5 14s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 8h-2v-5h2v5z"/></svg>
+      Timer
+    </button>
+    <button class="tab" data-tab="wc">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.53c-.26-.81-1-1.4-1.9-1.4h-1v-3c0-.55-.45-1-1-1h-6v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+      World Clock
+    </button>
+    <button class="tab" data-tab="po">
+      <svg viewBox="0 0 24 24"><path d="M18.8 8h-3.6C14.7 6.1 13 4.5 11 4.1V2H9v2.1C7 4.5 5.3 6.1 4.8 8H1.2C.5 8 0 8.5 0 9.2v.6c0 .7.5 1.2 1.2 1.2h.8C2 16.5 6 21 11 21s9-4.5 9-10h.8c.7 0 1.2-.5 1.2-1.2v-.6c0-.7-.5-1.2-1.2-1.2zM11 19c-3.9 0-7-3.1-7-7h14c0 3.9-3.1 7-7 7z"/></svg>
+      Pomodoro
+    </button>
+  </nav>
+
+  <!-- PANES -->
+  <main class="content">
+
+    <!-- 1. DIGITAL CLOCK -->
+    <div class="pane active" id="dig">
+      <div class="dig-wrap">
+        <div class="dig-time" aria-live="polite">
+          <span id="dtime">00:00</span><span class="sec" id="dsec">00</span><span class="per" id="dper"></span>
+        </div>
+        <div class="date-tz">
+          <div class="date-txt" id="ddate">Loading...</div>
+          <span class="tz-badge" id="dtz">Asia/Kolkata</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. ANALOG CLOCK -->
+    <div class="pane" id="ana">
+      <div class="analog-wrap">
+        <div class="clock-face">
+          <div class="cap"></div>
+          <div class="hand hour-h" id="hh"></div>
+          <div class="hand min-h" id="mh"></div>
+          <div class="hand sec-h" id="sh"></div>
+          <span class="dn dn12">12</span>
+          <span class="dn dn3">3</span>
+          <span class="dn dn6">6</span>
+          <span class="dn dn9">9</span>
+        </div>
+      </div>
+      <div class="sub-dig" id="sub-dig" aria-live="polite">00:00:00</div>
+    </div>
+
+    <!-- 3. STOPWATCH -->
+    <div class="pane" id="sw">
+      <div class="sw-wrap">
+        <div class="sw-disp" id="sw-disp" aria-live="polite">00:00:00.00</div>
+        <div class="sw-btns">
+          <button class="btn btn-p" id="sw-start"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg> Start</button>
+          <button class="btn btn-s" id="sw-lap" disabled><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg> Lap</button>
+          <button class="btn btn-d" id="sw-reset" disabled><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4 11H8V11h8v2z"/></svg> Reset</button>
+        </div>
+        <div class="laps" id="laps"></div>
+      </div>
+    </div>
+
+    <!-- 4. TIMER -->
+    <div class="pane" id="tm">
+      <div class="tm-wrap">
+        <div class="tm-inputs" id="tm-inp">
+          <div class="tm-grp"><span>Hr</span><input class="tm-field" id="t-h" type="number" min="0" max="99" value="00"></div>
+          <span class="tm-sep">:</span>
+          <div class="tm-grp"><span>Min</span><input class="tm-field" id="t-m" type="number" min="0" max="59" value="05"></div>
+          <span class="tm-sep">:</span>
+          <div class="tm-grp"><span>Sec</span><input class="tm-field" id="t-s" type="number" min="0" max="59" value="00"></div>
+        </div>
+        <div class="circ" id="tm-circ" style="display:none">
+          <svg viewBox="0 0 220 220" width="220" height="220" style="transform:rotate(-90deg)">
+            <circle class="c-bg" cx="110" cy="110" r="100"/>
+            <circle class="c-bar" id="t-bar" cx="110" cy="110" r="100"/>
+          </svg>
+          <div class="c-label"><span class="c-txt" id="t-txt">00:05:00</span></div>
+        </div>
+        <div class="tm-btns">
+          <button class="btn btn-p" id="t-start"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg> Start</button>
+          <button class="btn btn-d" id="t-reset" disabled><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4 11H8V11h8v2z"/></svg> Reset</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. WORLD CLOCK -->
+    <div class="pane" id="wc">
+      <div class="wc-wrap">
+        <div class="wc-head">
+          <h3>🌍 World Clock Dashboard</h3>
+          <button class="add-btn" id="add-city">+ Add Timezone</button>
+        </div>
+        <div class="city-grid" id="city-grid"></div>
+      </div>
+    </div>
+
+    <!-- 6. POMODORO -->
+    <div class="pane" id="po">
+      <div class="po-wrap">
+        <div class="po-modes">
+          <button class="po-btn active" data-m="focus">🎯 Focus</button>
+          <button class="po-btn" data-m="short">☕ Short Break</button>
+          <button class="po-btn" data-m="long">🌙 Long Break</button>
+        </div>
+        <span class="po-status" id="po-status">Focus Session</span>
+        <div class="circ">
+          <svg viewBox="0 0 220 220" width="220" height="220" style="transform:rotate(-90deg)">
+            <circle class="c-bg" cx="110" cy="110" r="100"/>
+            <circle class="c-bar" id="po-bar" cx="110" cy="110" r="100"/>
+          </svg>
+          <div class="c-label"><span class="c-txt" id="po-txt">25:00</span></div>
+        </div>
+        <div class="tm-btns">
+          <button class="btn btn-p" id="po-start"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg> Start</button>
+          <button class="btn btn-d" id="po-reset" disabled><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4 11H8V11h8v2z"/></svg> Reset</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- WORLD CLOCK MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <div class="modal-hd">
+      <h3>Add City Timezone</h3>
+      <button class="x-btn" id="modal-close">&times;</button>
+    </div>
+    <select class="tz-sel" id="tz-sel">
+      <option value="Europe/London">🇬🇧 London (GMT/BST)</option>
+      <option value="America/New_York">🇺🇸 New York (EST/EDT)</option>
+      <option value="America/Los_Angeles">🇺🇸 Los Angeles (PST/PDT)</option>
+      <option value="America/Chicago">🇺🇸 Chicago (CST/CDT)</option>
+      <option value="America/Toronto">🇨🇦 Toronto (EST/EDT)</option>
+      <option value="Asia/Tokyo">🇯🇵 Tokyo (JST)</option>
+      <option value="Asia/Shanghai">🇨🇳 Shanghai (CST)</option>
+      <option value="Asia/Seoul">🇰🇷 Seoul (KST)</option>
+      <option value="Asia/Singapore">🇸🇬 Singapore (SGT)</option>
+      <option value="Asia/Dubai">🇦🇪 Dubai (GST)</option>
+      <option value="Asia/Bangkok">🇹🇭 Bangkok (ICT)</option>
+      <option value="Asia/Kolkata">🇮🇳 Mumbai/Delhi (IST)</option>
+      <option value="Australia/Sydney">🇦🇺 Sydney (AEST)</option>
+      <option value="Europe/Paris">🇫🇷 Paris (CET/CEST)</option>
+      <option value="Europe/Berlin">🇩🇪 Berlin (CET/CEST)</option>
+      <option value="Europe/Moscow">🇷🇺 Moscow (MSK)</option>
+      <option value="Africa/Cairo">🇪🇬 Cairo (EET)</option>
+      <option value="America/Sao_Paulo">🇧🇷 Sao Paulo (BRT)</option>
+      <option value="Pacific/Auckland">🇳🇿 Auckland (NZST)</option>
+    </select>
+    <button class="btn btn-p" style="width:100%;justify-content:center" id="modal-add">Add Timezone</button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-info">
+    <h4>Designed &amp; Developed by <span class="hl">Aditya Gupta Developer</span></h4>
+    <p>Futuristic Web Architecture &amp; Creative Programming Lab</p>
+    <p class="sub"><strong>Aditya Gupta</strong> · Web Developer · Time Lab Project · India</p>
+    <a href="about.html" class="about-lnk">About Aditya Gupta Developer →</a>
+  </div>
+  <div class="socials">
+    <a href="https://www.linkedin.com/in/aditya-gupta-878b3b289" target="_blank" rel="noopener" class="soc li">
+      <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+      <span class="tip">LinkedIn – Aditya Gupta</span>
+    </a>
+    <a href="https://instagram.com/mr_insaan_kumar" target="_blank" rel="noopener" class="soc ig">
+      <svg viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
+      <span class="tip">Instagram – Aditya Gupta</span>
+    </a>
+    <a href="https://wa.me/918009401313" target="_blank" rel="noopener" class="soc wa">
+      <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.72 13c-.24.67-1.39 1.29-1.9 1.36-.51.07-1 .12-3.15-.75-2.58-1.06-4.22-3.69-4.35-3.86-.13-.17-1.07-1.42-1.07-2.72 0-1.3.68-1.94.92-2.2.24-.26.51-.32.68-.32.17 0 .34 0 .49.01.16 0 .37-.06.58.45.22.53.75 1.83.82 1.97.07.13.11.3.02.48-.09.18-.14.28-.28.45-.14.17-.3.38-.43.51-.15.15-.3.32-.13.61.17.29.76 1.25 1.63 2.03.87.78 1.6-1.02 1.83-1.12.22-.11.45-.09.61.02.16.11 1.02.48 1.2.57.18.09.3.14.34.22.04.08.04.46-.2.13z"/></svg>
+      <span class="tip">WhatsApp – Aditya Gupta</span>
+    </a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // ---- THEME ----
+  let use24 = localStorage.getItem('fmt') === '24';
+  const dots = document.querySelectorAll('.dot');
+  const fmtbtn = document.getElementById('fmtbtn');
+  fmtbtn.textContent = use24 ? '24H' : '12H';
+  dots.forEach(d => {
+    d.addEventListener('click', () => {
+      dots.forEach(x => x.classList.remove('active'));
+      d.classList.add('active');
+      document.body.className = '';
+      const cl = d.classList[1];
+      if(cl !== 'cyan') document.body.classList.add('theme-' + cl);
+      localStorage.setItem('theme', cl);
+    });
+  });
+  const st = localStorage.getItem('theme');
+  if(st && st !== 'cyan') {
+    const sd = document.querySelector('.dot.' + st);
+    if(sd) sd.click();
+  }
+  fmtbtn.addEventListener('click', () => {
+    use24 = !use24;
+    localStorage.setItem('fmt', use24 ? '24' : '12');
+    fmtbtn.textContent = use24 ? '24H' : '12H';
+  });
+
+  // ---- TABS ----
+  document.querySelectorAll('.tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.pane').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.tab).classList.add('active');
+    });
+  });
+
+  // ---- AUDIO ----
+  let actx = null;
+  function beep() {
+    try {
+      if(!actx) actx = new (window.AudioContext || window.webkitAudioContext)();
+      [0, .25, .5].forEach(d => {
+        const o = actx.createOscillator(), g = actx.createGain();
+        o.connect(g); g.connect(actx.destination);
+        o.type = 'sine';
+        o.frequency.setValueAtTime(987.77, actx.currentTime + d);
+        g.gain.setValueAtTime(.2, actx.currentTime + d);
+        g.gain.exponentialRampToValueAtTime(.01, actx.currentTime + d + .15);
+        o.start(actx.currentTime + d);
+        o.stop(actx.currentTime + d + .18);
+      });
+    } catch(e) {}
+  }
+
+  // ---- DIGITAL + ANALOG CLOCK ----
+  const dtime = document.getElementById('dtime');
+  const dsec = document.getElementById('dsec');
+  const dper = document.getElementById('dper');
+  const ddate = document.getElementById('ddate');
+  const dtz = document.getElementById('dtz');
+  const hh = document.getElementById('hh');
+  const mh = document.getElementById('mh');
+  const sh = document.getElementById('sh');
+  const subdig = document.getElementById('sub-dig');
+
+  try { dtz.textContent = Intl.DateTimeFormat().resolvedOptions().timeZone; } catch(e) {}
+
+  function clockTick() {
+    const now = new Date();
+    const ms = now.getMilliseconds(), s = now.getSeconds(), m = now.getMinutes();
+    let h = now.getHours();
+    let dh = h, per = '';
+    if(!use24) { per = h >= 12 ? 'PM' : 'AM'; dh = h % 12 || 12; }
+    const hs = String(dh).padStart(2,'0'), ms2 = String(m).padStart(2,'0'), ss = String(s).padStart(2,'0');
+    dtime.textContent = hs + ':' + ms2;
+    dsec.textContent = ss;
+    dper.textContent = per;
+    ddate.textContent = now.toLocaleDateString(undefined, {weekday:'long',year:'numeric',month:'long',day:'numeric'});
+    // Analog
+    const sms = s + ms/1000, smm = m + sms/60, shh = (h%12) + smm/60;
+    sh.style.transform = `translateX(-50%) rotate(${sms*6}deg)`;
+    mh.style.transform = `translateX(-50%) rotate(${smm*6}deg)`;
+    hh.style.transform = `translateX(-50%) rotate(${shh*30}deg)`;
+    // Sub-digital
+    let ah = h, ap = '';
+    if(!use24){ ap = h>=12?' PM':' AM'; ah = h%12||12; }
+    subdig.textContent = String(ah).padStart(2,'0')+':'+ms2+':'+ss+ap;
+    requestAnimationFrame(clockTick);
+  }
+  requestAnimationFrame(clockTick);
+
+  // ---- STOPWATCH ----
+  let swRunning = false, swStart = 0, swElapsed = 0, swInterval = null, swLaps = [];
+  const swDisp = document.getElementById('sw-disp');
+  const swStart2 = document.getElementById('sw-start');
+  const swLap2 = document.getElementById('sw-lap');
+  const swReset2 = document.getElementById('sw-reset');
+  const lapsEl = document.getElementById('laps');
+
+  function fmtSW(ms) {
+    const tot = Math.floor(ms/1000);
+    const h = Math.floor(tot/3600), mi = Math.floor((tot%3600)/60), s = tot%60, cs = Math.floor((ms%1000)/10);
+    return `${String(h).padStart(2,'0')}:${String(mi).padStart(2,'0')}:${String(s).padStart(2,'0')}.${String(cs).padStart(2,'0')}`;
+  }
+
+  swStart2.addEventListener('click', () => {
+    if(swRunning){
+      swRunning = false; clearInterval(swInterval);
+      swStart2.innerHTML = '<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg> Resume';
+      swLap2.disabled = true;
+    } else {
+      swRunning = true;
+      swStart = Date.now() - swElapsed;
+      swInterval = setInterval(() => { swElapsed = Date.now()-swStart; swDisp.textContent = fmtSW(swElapsed); }, 10);
+      swStart2.innerHTML = '<svg viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg> Pause';
+      swLap2.disabled = false; swReset2.disabled = false;
+    }
+  });
+
+  swLap2.addEventListener('click', () => {
+    if(!swRunning) return;
+    swLaps.unshift(swElapsed);
+    const r = document.createElement('div'); r.className = 'lap-row';
+    r.innerHTML = `<span class="lap-n">Lap ${swLaps.length}</span><span class="lap-v">${fmtSW(swElapsed)}</span>`;
+    lapsEl.insertBefore(r, lapsEl.firstChild);
+  });
+
+  swReset2.addEventListener('click', () => {
+    swRunning = false; clearInterval(swInterval); swElapsed = 0; swLaps = [];
+    swDisp.textContent = '00:00:00.00'; lapsEl.innerHTML = '';
+    swStart2.innerHTML = '<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg> Start';
+    swLap2.disabled = true; swReset2.disabled = true;
+  });
+
+  // ---- COUNTDOWN TIMER ----
+  let tmTotal = 0, tmRem = 0, tmRunning = false, tmInterval = null;
+  const tmInp = document.getElementById('tm-inp');
+  const tmCirc = document.getElementById('tm-circ');
+  const tmBar = document.getElementById('t-bar');
+  const tmTxt = document.getElementById('t-txt');
+  const tH = document.getElementById('t-h');
+  const tM = document.getElementById('t-m');
+  const tS2 = document.getElementById('t-s');
+  const tStart = document.getElementById('t-start');
+  const tReset = document.getElementById('t-reset');
+
+  [tH,tM,tS2].forEach(inp => {
+    inp.addEventListener('change', () => {
+      let v = parseInt(inp.value)||0;
+      if(v<0) v=0;
+      if(inp===tH && v>99) v=99;
+      else if(inp!==tH && v>59) v=59;
+      inp.value = String(v).padStart(2,'0');
+    });
+  });
+
+  function updTm() {
+    if(tmTotal<=0) return;
+    const pct = tmRem/tmTotal;
+    tmBar.style.strokeDashoffset = 628 - pct*628;
+    const h=Math.floor(tmRem/3600), mi=Math.floor((tmRem%3600)/60), s=tmRem%60;
+    tmTxt.textContent = `${String(h).padStart(2,'0')}:${String(mi).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+  }
+
+  function resetTm() {
+    tmRunning=false; clearInterval(tmInterval); tmRem=0; tmTotal=0;
+    tmInp.style.display='flex'; tmCirc.style.display='none';
+    tStart.innerHTML='<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg> Start';
+    tReset.disabled=true; tmBar.style.strokeDashoffset=0;
+  }
+
+  tStart.addEventListener('click', () => {
+    if(tmRunning){
+      tmRunning=false; clearInterval(tmInterval);
+      tStart.innerHTML='<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg> Resume';
+    } else {
+      if(tmRem<=0){
+        const h=parseInt(tH.value)||0, mi=parseInt(tM.value)||0, s=parseInt(tS2.value)||0;
+        tmTotal=(h*3600)+(mi*60)+s; tmRem=tmTotal;
+        if(tmTotal<=0){ alert('Ek valid time set karo pehle!'); return; }
+        tmInp.style.display='none'; tmCirc.style.display='block';
+      }
+      tmRunning=true; tReset.disabled=false; updTm();
+      tmInterval=setInterval(()=>{ tmRem--; updTm(); if(tmRem<=0){ clearInterval(tmInterval); tmRunning=false; beep(); setTimeout(()=>{ alert('⏰ Time is up!'); resetTm(); },100); }},1000);
+      tStart.innerHTML='<svg viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg> Pause';
+    }
+  });
+  tReset.addEventListener('click', resetTm);
+
+  // ---- WORLD CLOCK ----
+  let cities = [
+    {name:'🇮🇳 New Delhi',tz:'Asia/Kolkata'},
+    {name:'🇬🇧 London',tz:'Europe/London'},
+    {name:'🇺🇸 New York',tz:'America/New_York'},
+    {name:'🇯🇵 Tokyo',tz:'Asia/Tokyo'}
+  ];
+  const grid = document.getElementById('city-grid');
+  const addBtn = document.getElementById('add-city');
+  const modal = document.getElementById('modal');
+  const modalClose = document.getElementById('modal-close');
+  const tzSel = document.getElementById('tz-sel');
+  const modalAdd = document.getElementById('modal-add');
+
+  function renderCities() {
+    const now = new Date();
+    grid.innerHTML = '';
+    cities.forEach((c, i) => {
+      try {
+        const t = new Intl.DateTimeFormat([],{timeZone:c.tz,hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:!use24}).format(now);
+        const dd = new Intl.DateTimeFormat([],{timeZone:c.tz,weekday:'short',month:'short',day:'numeric'}).format(now);
+        const parts = new Intl.DateTimeFormat([],{timeZone:c.tz,timeZoneName:'shortOffset'}).formatToParts(now);
+        const off = (parts.find(p=>p.type==='timeZoneName')||{}).value||'';
+        const card = document.createElement('div'); card.className='city-card';
+        card.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:center"><span class="c-name">${c.name}</span>${i>3?`<button onclick="delCity(${i})" style="background:transparent;border:none;color:rgba(255,255,255,.5);font-size:1.2rem;cursor:pointer;line-height:1">&times;</button>`:''}</div><span class="c-time">${t}</span><div style="display:flex;justify-content:space-between;margin-top:4px"><span class="c-date">${dd}</span><span class="c-off">${off}</span></div>`;
+        grid.appendChild(card);
+      } catch(e){}
+    });
+  }
+  window.delCity = (i) => { cities.splice(i,1); saveCities(); renderCities(); };
+  function saveCities(){ localStorage.setItem('cities',JSON.stringify(cities)); }
+  function loadCities(){ try{ const s=localStorage.getItem('cities'); if(s) cities=JSON.parse(s); }catch(e){} }
+  loadCities(); setInterval(renderCities,1000); renderCities();
+  addBtn.addEventListener('click',()=>modal.classList.add('open'));
+  modalClose.addEventListener('click',()=>modal.classList.remove('open'));
+  modal.addEventListener('click',e=>{ if(e.target===modal) modal.classList.remove('open'); });
+  modalAdd.addEventListener('click',()=>{
+    const tz=tzSel.value, name=tzSel.options[tzSel.selectedIndex].text.split('(')[0].trim();
+    if(cities.some(c=>c.tz===tz)){ alert('Already added!'); return; }
+    cities.push({name,tz}); saveCities(); renderCities(); modal.classList.remove('open');
+  });
+
+  // ---- POMODORO ----
+  let poRem=25*60, poTotal=25*60, poRunning=false, poInterval=null, poMode='focus';
+  const poBar=document.getElementById('po-bar');
+  const poTxt=document.getElementById('po-txt');
+  const poStatus=document.getElementById('po-status');
+  const poStart=document.getElementById('po-start');
+  const poReset=document.getElementById('po-reset');
+
+  function updPo(){
+    const pct=poRem/poTotal;
+    poBar.style.strokeDashoffset=628-pct*628;
+    const mi=Math.floor(poRem/60), s=poRem%60;
+    poTxt.textContent=`${String(mi).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+  }
+
+  function switchPo(m){
+    poMode=m; poRunning=false; clearInterval(poInterval);
+    document.querySelectorAll('.po-btn').forEach(b=>{ b.classList.remove('active'); if(b.dataset.m===m) b.classList.add('active'); });
+    if(m==='focus'){poTotal=25*60;poStatus.textContent='🎯 Focus Session';}
+    else if(m==='short'){poTotal=5*60;poStatus.textContent='☕ Short Break';}
+    else{poTotal=15*60;poStatus.textContent='🌙 Long Break';}
+    poRem=poTotal; updPo();
+    poStart.innerHTML='<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg> Start';
+    poReset.disabled=true;
+  }
+
+  document.querySelectorAll('.po-btn').forEach(b=>b.addEventListener('click',()=>switchPo(b.dataset.m)));
+  poStart.addEventListener('click',()=>{
+    if(poRunning){
+      poRunning=false; clearInterval(poInterval);
+      poStart.innerHTML='<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg> Resume';
+    } else {
+      poRunning=true; poReset.disabled=false;
+      poInterval=setInterval(()=>{ poRem--; updPo(); if(poRem<=0){ clearInterval(poInterval); poRunning=false; beep(); alert('✅ Session done!'); switchPo(poMode==='focus'?'short':'focus'); }},1000);
+      poStart.innerHTML='<svg viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg> Pause';
+    }
+  });
+  poReset.addEventListener('click',()=>switchPo(poMode));
+  switchPo('focus');
+})();
+</script>
+</body>
+</html>

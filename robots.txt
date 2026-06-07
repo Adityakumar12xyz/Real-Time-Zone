@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://adityagupta-timelab.netlify.app/sitemap.xml
+
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
